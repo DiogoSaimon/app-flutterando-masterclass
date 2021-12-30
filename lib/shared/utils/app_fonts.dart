@@ -21,6 +21,12 @@ class AppFonts {
     color: AppColors.blackSqueeze,
   );
 
+  static TextStyle poppinsw500BlackSqueeze15 = GoogleFonts.poppins(
+    fontSize: 15,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackSqueeze,
+  );
+
   static TextStyle poppinsw600BlackSqueeze12 = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w600,

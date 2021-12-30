@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_app_masterclass/shared/widgets/app_bar_custom.dart';
+import 'package:projeto_app_masterclass/shared/widgets/app_bar_logo.dart';
 import 'package:projeto_app_masterclass/shared/widgets/bottom_navigation_bar_custom.dart';
 import 'package:projeto_app_masterclass/shared/widgets/card.dart';
 
@@ -22,7 +22,7 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       appBar: PreferredSize(
         preferredSize: const Size.fromHeight(130),
-        child: AppBarCustom(
+        child: AppBarLogo(
           subtitle: 'Flutterando Masterclass',
           title: 'Atividades',
         ),

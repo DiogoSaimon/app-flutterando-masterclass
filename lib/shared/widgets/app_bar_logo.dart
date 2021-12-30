@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
-class AppBarCustom extends StatefulWidget {
-  const AppBarCustom({
+class AppBarLogo extends StatefulWidget {
+  const AppBarLogo({
     Key? key,
     this.title,
     this.subtitle,
@@ -13,10 +13,10 @@ class AppBarCustom extends StatefulWidget {
   final String? subtitle;
 
   @override
-  _AppBarCustomState createState() => _AppBarCustomState();
+  _AppBarLogoState createState() => _AppBarLogoState();
 }
 
-class _AppBarCustomState extends State<AppBarCustom> {
+class _AppBarLogoState extends State<AppBarLogo> {
   @override
   Widget build(BuildContext context) {
     return Material(

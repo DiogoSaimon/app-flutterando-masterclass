@@ -3,12 +3,18 @@ import 'package:projeto_app_masterclass/shared/widgets/app_bar_custom.dart';
 import 'package:projeto_app_masterclass/shared/widgets/bottom_navigation_bar_custom.dart';
 import 'package:projeto_app_masterclass/shared/widgets/card.dart';
 
+import 'home_controller.dart';
+
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({
+    Key? key,
+  }) : super(key: key);
 
   @override
   _HomePageState createState() => _HomePageState();
 }
+
+final controller = HomeController();
 
 class _HomePageState extends State<HomePage> {
   @override
@@ -21,7 +27,13 @@ class _HomePageState extends State<HomePage> {
           title: 'Atividades',
         ),
       ),
-      body: CardWidget(),
+      body: ListView.builder(
+          itemCount: controller.listDataModels.length,
+          itemBuilder: (context, index) {
+            return CardWidget(
+              info: controller.listDataModels[index],
+            );
+          }),
       bottomNavigationBar: SafeArea(
         bottom: true,
         child: BottomNavigationBarCustom(),

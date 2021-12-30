@@ -1,14 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:projeto_app_masterclass/models/data_models.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
-class CardWidget extends StatelessWidget {
-  const CardWidget({Key? key}) : super(key: key);
+class CardWidget extends StatefulWidget {
+  final DataModels info;
 
+  const CardWidget({
+    Key? key,
+    required this.info,
+  }) : super(key: key);
+
+  @override
+  State<CardWidget> createState() => _CardWidgetState();
+}
+
+class _CardWidgetState extends State<CardWidget> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 14.0),
+      padding: const EdgeInsets.only(left: 14.0, right: 14.0, bottom: 8.0),
       child: SizedBox(
         height: 220,
         child: Card(
@@ -24,7 +35,7 @@ class CardWidget extends StatelessWidget {
                   padding: const EdgeInsets.only(top: 10, left: 12, right: 13),
                   child: CircleAvatar(
                     child: Image.asset(
-                      "assets/images/awesome_running.png",
+                      widget.info.iconImage!,
                       alignment: Alignment.center,
                     ),
                     backgroundColor: AppColors.endeavour,
@@ -35,7 +46,7 @@ class CardWidget extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 20, left: 68),
                 child: Text(
-                  "Animações",
+                  widget.info.title!,
                   style: AppFonts.poppinsw500BlackSqueeze16,
                 ),
               ),
@@ -52,7 +63,7 @@ class CardWidget extends StatelessWidget {
                       ),
                       SizedBox(width: 10),
                       Text(
-                        "4",
+                        widget.info.count.toString(),
                         style: AppFonts.poppinsw500BlackSqueeze12,
                       )
                     ],
@@ -60,11 +71,11 @@ class CardWidget extends StatelessWidget {
                 ),
               ),
               Align(
-                alignment: Alignment.center,
+                alignment: Alignment.centerLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(left: 16),
                   child: Text(
-                    "Estudos sobre animações implícitas e controladas, contendo 4 exercícios e 2 estudos",
+                    widget.info.subtitle!,
                     style: AppFonts.montserratw400Abbey14,
                     maxLines: 2,
                     overflow: TextOverflow.fade,

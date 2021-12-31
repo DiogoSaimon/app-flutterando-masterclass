@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'shared/utils/app_colors.dart';
-import 'views/exercices_page/animation/animation_exercices_page.dart';
+import 'views/about_dev/about_dev_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
           backgroundColor: AppColors.woodSmoke,
         ),
       ),
-      home: AnimationExercicesPage(),
+      home: AboutDevPage(),
     );
   }
 }

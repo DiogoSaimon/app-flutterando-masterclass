@@ -27,10 +27,22 @@ class AppFonts {
     color: AppColors.blackSqueeze,
   );
 
+  static TextStyle poppinsw500BlackSqueeze14 = GoogleFonts.poppins(
+    fontSize: 14,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackSqueeze,
+  );
+
   static TextStyle poppinsw600BlackSqueeze12 = GoogleFonts.poppins(
     fontSize: 12,
     fontWeight: FontWeight.w600,
     color: AppColors.blackSqueeze,
+  );
+
+  static TextStyle poppinsw500Abbey12 = GoogleFonts.poppins(
+    fontSize: 12,
+    fontWeight: FontWeight.w500,
+    color: AppColors.abbey,
   );
 
   static TextStyle montserratw400Abbey14 = GoogleFonts.montserrat(

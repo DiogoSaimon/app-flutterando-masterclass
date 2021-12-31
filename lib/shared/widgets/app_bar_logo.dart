@@ -5,12 +5,10 @@ import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 class AppBarLogo extends StatefulWidget {
   const AppBarLogo({
     Key? key,
-    this.title,
-    this.subtitle,
+    required this.title,
   }) : super(key: key);
 
-  final String? title;
-  final String? subtitle;
+  final String title;
 
   @override
   _AppBarLogoState createState() => _AppBarLogoState();
@@ -41,11 +39,11 @@ class _AppBarLogoState extends State<AppBarLogo> {
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   Text(
-                    widget.title!,
+                    widget.title,
                     style: AppFonts.poppinsw600BlackSqueeze20,
                   ),
                   Text(
-                    widget.subtitle!,
+                    "Flutterando Masterclass",
                     style: AppFonts.poppinsw500BlackSqueeze12,
                   ),
                 ],

@@ -17,7 +17,9 @@ class _AnimationExercicesPageState extends State<AnimationExercicesPage> {
         preferredSize: const Size.fromHeight(120),
         child: AppBarExecices(
           title: "Animações",
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
         ),
       ),
       body: ListView.builder(

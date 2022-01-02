@@ -56,7 +56,7 @@ class _CardUserProfileState extends State<CardUserProfile> {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(top: 46, left: 103, right: 103),
+              padding: const EdgeInsets.only(top: 46, left: 82, right: 82),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [

@@ -1,21 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_app_masterclass/shared/widgets/app_bar_logo.dart';
-import 'package:projeto_app_masterclass/shared/widgets/bottom_navigation_bar_custom.dart';
-import 'package:projeto_app_masterclass/shared/widgets/card.dart';
-import 'home_controller.dart';
+import 'package:projeto_app_masterclass/shared/widgets/card_activities.dart';
+import 'activities_controller.dart';
 
-class HomePage extends StatefulWidget {
-  const HomePage({
+class ActivitiesPage extends StatefulWidget {
+  const ActivitiesPage({
     Key? key,
   }) : super(key: key);
 
   @override
-  _HomePageState createState() => _HomePageState();
+  _ActivitiesPageState createState() => _ActivitiesPageState();
 }
 
 final controller = HomeController();
 
-class _HomePageState extends State<HomePage> {
+class _ActivitiesPageState extends State<ActivitiesPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,14 +27,10 @@ class _HomePageState extends State<HomePage> {
       body: ListView.builder(
           itemCount: controller.listDataModels.length,
           itemBuilder: (context, index) {
-            return CardWidget(
+            return CardActivities(
               info: controller.listDataModels[index],
             );
           }),
-      bottomNavigationBar: SafeArea(
-        bottom: true,
-        child: BottomNavigationBarCustom(),
-      ),
     );
   }
 }

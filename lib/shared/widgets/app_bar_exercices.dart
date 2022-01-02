@@ -10,7 +10,7 @@ class AppBarExecices extends StatefulWidget {
   }) : super(key: key);
 
   final String title;
-  final Function onPressed;
+  final VoidCallback onPressed;
 
   @override
   _AppBarExecicesState createState() => _AppBarExecicesState();
@@ -19,12 +19,13 @@ class AppBarExecices extends StatefulWidget {
 class _AppBarExecicesState extends State<AppBarExecices> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: AppBar(
+    return Scaffold(
+      appBar: AppBar(
         toolbarHeight: 130,
         elevation: 0.0,
         leading: IconButton(
-          onPressed: () {},
+          onPressed: widget.onPressed,
+          splashRadius: 20,
           icon: Icon(
             Icons.chevron_left_rounded,
             size: 50,
@@ -54,6 +55,7 @@ class _AppBarExecicesState extends State<AppBarExecices> {
                 FontAwesomeIcons.solidMoon,
                 color: Colors.white,
               ),
+              splashRadius: 20,
             ),
           ),
         ],

@@ -1,21 +1,31 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:projeto_app_masterclass/models/data_models.dart';
+import 'package:projeto_app_masterclass/shared/routes/routes.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
-class CardWidget extends StatefulWidget {
+class CardActivities extends StatefulWidget {
   final DataModels info;
 
-  const CardWidget({
+  const CardActivities({
     Key? key,
     required this.info,
   }) : super(key: key);
 
   @override
-  State<CardWidget> createState() => _CardWidgetState();
+  State<CardActivities> createState() => _CardActivitiesState();
 }
 
-class _CardWidgetState extends State<CardWidget> {
+class _CardActivitiesState extends State<CardActivities> {
+  @override
+  void initState() {
+    super.initState();
+    if (Platform.isAndroid) WebView.platform = AndroidWebView();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -86,15 +96,23 @@ class _CardWidgetState extends State<CardWidget> {
                 alignment: Alignment.bottomLeft,
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 17, left: 14.56),
-                  child: Row(
-                    children: [
-                      Image.asset("assets/images/awesome_github.png"),
-                      SizedBox(width: 4.36),
-                      Text(
-                        "Acessar código fonte",
-                        style: AppFonts.montserratw400BlackSqueeze12,
-                      ),
-                    ],
+                  child: GestureDetector(
+                    onTap: () {
+                      WebView(
+                        initialUrl:
+                            'https://github.com/DiogoSaimon/desafio-transicao-botoes',
+                      );
+                    },
+                    child: Row(
+                      children: [
+                        Image.asset("assets/images/awesome_github.png"),
+                        SizedBox(width: 4.36),
+                        Text(
+                          "Acessar código fonte",
+                          style: AppFonts.montserratw400BlackSqueeze12,
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
@@ -109,7 +127,9 @@ class _CardWidgetState extends State<CardWidget> {
                         shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20),
                         )),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.of(context).pushNamed(exercices);
+                    },
                     child: Text(
                       "Ver mais",
                       style: AppFonts.poppinsw600BlackSqueeze12,

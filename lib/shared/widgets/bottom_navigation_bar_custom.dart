@@ -3,7 +3,13 @@ import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
 class BottomNavigationBarCustom extends StatefulWidget {
-  const BottomNavigationBarCustom({Key? key}) : super(key: key);
+  const BottomNavigationBarCustom({
+    Key? key,
+    required this.currentIndex,
+    required this.onTap,
+  }) : super(key: key);
+  final int currentIndex;
+  final void Function(int) onTap;
 
   @override
   _BottomNavigationBarCustomState createState() =>
@@ -11,14 +17,6 @@ class BottomNavigationBarCustom extends StatefulWidget {
 }
 
 class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
-  // int _selectedIndex = 0;
-
-  // void _onItemTapped(int index) {
-  //   setState(() {
-  //     _selectedIndex = index;
-  //   });
-  // }
-
   @override
   Widget build(BuildContext context) {
     return SizedBox(
@@ -30,7 +28,9 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                widget.onTap(0);
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -50,7 +50,9 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
               thickness: 1,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                widget.onTap(1);
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
@@ -70,7 +72,9 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
               thickness: 1,
             ),
             GestureDetector(
-              onTap: () {},
+              onTap: () {
+                widget.onTap(2);
+              },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [

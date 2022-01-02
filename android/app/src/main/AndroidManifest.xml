@@ -1,5 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.projeto_app_masterclass">
+
    <application
         android:label="projeto_app_masterclass"
         android:name="${applicationName}"

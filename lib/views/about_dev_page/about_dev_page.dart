@@ -23,16 +23,18 @@ class _AboutDevPageState extends State<AboutDevPage> {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 14),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: const [
-            CardUserProfile(),
-            SizedBox(height: 29),
-            FavoriteTechnologies(),
-            SizedBox(height: 25),
-            SkillsCompetencesCard(),
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              CardUserProfile(),
+              SizedBox(height: 29),
+              FavoriteTechnologies(),
+              SizedBox(height: 25),
+              SkillsCompetencesCard(),
+            ],
+          ),
         ),
       ),
     );

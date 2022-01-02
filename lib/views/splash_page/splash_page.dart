@@ -1,4 +1,7 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
+import 'package:projeto_app_masterclass/shared/routes/routes.dart';
 import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
 
 class SplashPage extends StatefulWidget {
@@ -9,6 +12,14 @@ class SplashPage extends StatefulWidget {
 }
 
 class _SplashPageState extends State<SplashPage> {
+  @override
+  void initState() {
+    super.initState();
+    Timer(Duration(seconds: 2), () {
+      Navigator.of(context).pushReplacementNamed(navigation);
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -17,53 +17,51 @@ class AppBarLogo extends StatefulWidget {
 class _AppBarLogoState extends State<AppBarLogo> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: AppBar(
-        toolbarHeight: 130,
-        elevation: 0,
-        title: Padding(
-          padding: const EdgeInsets.only(top: 24.0),
-          child: Row(
-            children: [
-              Image.asset(
-                "assets/images/logo3x.png",
-                height: 48,
-                width: 48,
-              ),
-              SizedBox(
-                width: 4,
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    widget.title,
-                    style: AppFonts.poppinsw600BlackSqueeze20,
-                  ),
-                  Text(
-                    "Flutterando Masterclass",
-                    style: AppFonts.poppinsw500BlackSqueeze12,
-                  ),
-                ],
-              ),
-            ],
-          ),
+    return AppBar(
+      toolbarHeight: 130,
+      elevation: 0.0,
+      title: Padding(
+        padding: const EdgeInsets.only(top: 24.0),
+        child: Row(
+          children: [
+            Image.asset(
+              "assets/images/logo3x.png",
+              height: 48,
+              width: 48,
+            ),
+            SizedBox(
+              width: 4,
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  widget.title,
+                  style: AppFonts.poppinsw600BlackSqueeze20,
+                ),
+                Text(
+                  "Flutterando Masterclass",
+                  style: AppFonts.poppinsw500BlackSqueeze12,
+                ),
+              ],
+            ),
+          ],
         ),
-        actions: [
-          Padding(
-            padding: const EdgeInsets.only(right: 24.0, top: 38),
-            child: IconButton(
-              onPressed: () {},
-              icon: FaIcon(
-                FontAwesomeIcons.solidMoon,
-                color: Colors.white,
-              ),
+      ),
+      actions: [
+        Padding(
+          padding: const EdgeInsets.only(right: 24.0, top: 38),
+          child: IconButton(
+            onPressed: () {},
+            icon: FaIcon(
+              FontAwesomeIcons.solidMoon,
+              color: Colors.white,
             ),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 import 'package:projeto_app_masterclass/shared/widgets/progress_line.dart';
 
 class SkillsCompetencesCard extends StatelessWidget {
@@ -19,19 +16,20 @@ class SkillsCompetencesCard extends StatelessWidget {
           padding: const EdgeInsets.only(left: 8.0, bottom: 12),
           child: Text(
             "Habilidades e Competências",
-            style: AppFonts.poppinsw500BlackSqueeze14,
+            style: Theme.of(context).primaryTextTheme.bodyText1,
           ),
         ),
         SizedBox(
           width: MediaQuery.of(context).size.width,
           height: 150,
           child: Card(
-            color: AppColors.mirage,
+            color: Theme.of(context).cardColor,
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(28),
             ),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 14, vertical: 13),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 12.5, vertical: 12.5),
               child: Column(
                 children: const [
                   ProgressLine(

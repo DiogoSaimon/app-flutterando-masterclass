@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
 class CardUserProfile extends StatefulWidget {
   const CardUserProfile({Key? key}) : super(key: key);
@@ -19,13 +17,13 @@ class _CardUserProfileState extends State<CardUserProfile> {
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(28),
         ),
-        color: AppColors.mirage,
+        color: Theme.of(context).cardColor,
         child: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 8.0, bottom: 13),
               child: CircleAvatar(
-                backgroundColor: AppColors.woodSmoke,
+                backgroundColor: Theme.of(context).scaffoldBackgroundColor,
                 radius: 50,
                 child: Padding(
                   padding: const EdgeInsets.all(4.0),
@@ -40,7 +38,7 @@ class _CardUserProfileState extends State<CardUserProfile> {
             ),
             Text(
               "Mary Ann Sullivan",
-              style: AppFonts.poppinsw500BlackSqueeze16,
+              style: Theme.of(context).textTheme.headline6,
               maxLines: 1,
               overflow: TextOverflow.fade,
             ),
@@ -49,7 +47,7 @@ class _CardUserProfileState extends State<CardUserProfile> {
               padding: const EdgeInsets.symmetric(horizontal: 23),
               child: Text(
                 "Duis rhoncus dui venenatis consequat porttitor. Etiam aliquet congue consequat. In posuere, nunc sit amet laoreet blandit, urna sapien.",
-                style: AppFonts.poppinsw500Abbey12,
+                style: Theme.of(context).primaryTextTheme.caption,
                 textAlign: TextAlign.center,
                 maxLines: 3,
                 overflow: TextOverflow.fade,
@@ -62,22 +60,34 @@ class _CardUserProfileState extends State<CardUserProfile> {
                 children: [
                   IconButton(
                     onPressed: () {},
-                    icon: Image.asset("assets/images/logo_whatsapp.png"),
+                    icon: Image.asset(
+                      "assets/images/logo_whatsapp.png",
+                      color: Theme.of(context).iconTheme.color,
+                    ),
                     splashRadius: 14,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Image.asset("assets/images/awesome_github_alt.png"),
+                    icon: Image.asset(
+                      "assets/images/awesome_github_alt.png",
+                      color: Theme.of(context).iconTheme.color,
+                    ),
                     splashRadius: 14,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Image.asset("assets/images/awesome_instagram.png"),
+                    icon: Image.asset(
+                      "assets/images/awesome_instagram.png",
+                      color: Theme.of(context).iconTheme.color,
+                    ),
                     splashRadius: 14,
                   ),
                   IconButton(
                     onPressed: () {},
-                    icon: Image.asset("assets/images/awesome_facebook.png"),
+                    icon: Image.asset(
+                      "assets/images/awesome_facebook.png",
+                      color: Theme.of(context).iconTheme.color,
+                    ),
                     splashRadius: 14,
                   ),
                 ],

@@ -21,7 +21,7 @@ class _RepositoriesPageState extends State<RepositoriesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(130),
+        preferredSize: Size.fromHeight(120),
         child: AppBarLogo(
           title: "Repositórios",
         ),

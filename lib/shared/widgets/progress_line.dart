@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
 class ProgressLine extends StatelessWidget {
   const ProgressLine({
@@ -21,7 +19,7 @@ class ProgressLine extends StatelessWidget {
         children: [
           Text(
             title,
-            style: AppFonts.poppinsw500Abbey12,
+            style: Theme.of(context).primaryTextTheme.caption,
           ),
           Stack(
             children: [
@@ -29,7 +27,7 @@ class ProgressLine extends StatelessWidget {
                 width: 255,
                 height: 9,
                 decoration: BoxDecoration(
-                  color: AppColors.woodSmoke,
+                  color: Theme.of(context).scaffoldBackgroundColor,
                   borderRadius: BorderRadius.all(Radius.circular(10)),
                 ),
               ),
@@ -38,7 +36,7 @@ class ProgressLine extends StatelessWidget {
                   width: 255 * porcentage,
                   height: 9,
                   decoration: BoxDecoration(
-                    color: AppColors.endeavour,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                   ),
                 ),

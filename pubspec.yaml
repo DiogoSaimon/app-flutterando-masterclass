@@ -41,6 +41,7 @@ dependencies:
   webview_flutter: ^3.0.0
   webview_windows: ^0.1.0
   desktop_webview_window: ^0.1.5
+  provider:
   
 
 dev_dependencies:

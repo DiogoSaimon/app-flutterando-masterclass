@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
 
 class BottomNavigationBarCustom extends StatefulWidget {
   const BottomNavigationBarCustom({
@@ -34,19 +32,22 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset("assets/images/feather_target.png"),
+                  Image.asset(
+                    "assets/images/feather_target.png",
+                    color: Theme.of(context).iconTheme.color,
+                  ),
                   SizedBox(height: 7),
                   Text(
                     "Atividades",
-                    style: AppFonts.montserratw400BlackSqueeze12,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ],
               ),
             ),
             VerticalDivider(
-              color: AppColors.abbey,
+              color: Theme.of(context).dividerColor,
               width: 1,
-              indent: 12,
+              indent: 15,
               thickness: 1,
             ),
             GestureDetector(
@@ -56,19 +57,22 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Image.asset("assets/images/awesome_github.png"),
+                  Image.asset(
+                    "assets/images/awesome_github.png",
+                    color: Theme.of(context).iconTheme.color,
+                  ),
                   SizedBox(height: 7),
                   Text(
                     "Repositórios",
-                    style: AppFonts.montserratw400BlackSqueeze12,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ],
               ),
             ),
             VerticalDivider(
-              color: AppColors.abbey,
+              color: Theme.of(context).dividerColor,
               width: 1,
-              indent: 12,
+              indent: 15,
               thickness: 1,
             ),
             GestureDetector(
@@ -78,11 +82,12 @@ class _BottomNavigationBarCustomState extends State<BottomNavigationBarCustom> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Icon(Icons.person, color: AppColors.white, size: 28),
+                  Icon(Icons.person,
+                      color: Theme.of(context).iconTheme.color, size: 28),
                   SizedBox(height: 7),
                   Text(
                     "Sobre o dev",
-                    style: AppFonts.montserratw400BlackSqueeze12,
+                    style: Theme.of(context).textTheme.bodyText2,
                   ),
                 ],
               ),

@@ -19,7 +19,7 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(130),
+        preferredSize: const Size.fromHeight(120),
         child: AppBarLogo(
           title: 'Atividades',
         ),
@@ -29,6 +29,13 @@ class _ActivitiesPageState extends State<ActivitiesPage> {
           itemBuilder: (context, index) {
             return CardActivities(
               info: controller.listDataModels[index],
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                      builder: (context) =>
+                          controller.listDataModels[index].page!),
+                );
+              },
             );
           }),
     );

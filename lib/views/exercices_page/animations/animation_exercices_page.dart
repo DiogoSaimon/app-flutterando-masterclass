@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_app_masterclass/shared/widgets/app_bar_exercices.dart';
 import 'package:projeto_app_masterclass/shared/widgets/exercices_button.dart';
+import 'package:projeto_app_masterclass/views/activities_page/activities_controller.dart';
 
 class AnimationExercicesPage extends StatefulWidget {
   const AnimationExercicesPage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class AnimationExercicesPage extends StatefulWidget {
 }
 
 class _AnimationExercicesPageState extends State<AnimationExercicesPage> {
+  final controller = HomeController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,6 +30,14 @@ class _AnimationExercicesPageState extends State<AnimationExercicesPage> {
           itemBuilder: (context, index) {
             return ExercicesButton(
               count: index,
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) =>
+                        controller.listDataModels[0].routes![index],
+                  ),
+                );
+              },
             );
           }),
     );

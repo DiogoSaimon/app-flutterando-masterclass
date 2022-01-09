@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_fonts.dart';
+import 'package:projeto_app_masterclass/shared/utils/theme_colors.dart';
+import 'change_theme_button.dart';
 
 class AppBarLogo extends StatefulWidget {
   const AppBarLogo({
@@ -15,10 +15,11 @@ class AppBarLogo extends StatefulWidget {
 }
 
 class _AppBarLogoState extends State<AppBarLogo> {
+  final themeColors = ThemeColors();
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      toolbarHeight: 130,
+      toolbarHeight: 120,
       elevation: 0.0,
       title: Padding(
         padding: const EdgeInsets.only(top: 24.0),
@@ -39,11 +40,11 @@ class _AppBarLogoState extends State<AppBarLogo> {
               children: [
                 Text(
                   widget.title,
-                  style: AppFonts.poppinsw600BlackSqueeze20,
+                  style: Theme.of(context).textTheme.headline6,
                 ),
                 Text(
                   "Flutterando Masterclass",
-                  style: AppFonts.poppinsw500BlackSqueeze12,
+                  style: Theme.of(context).textTheme.caption,
                 ),
               ],
             ),
@@ -51,16 +52,7 @@ class _AppBarLogoState extends State<AppBarLogo> {
         ),
       ),
       actions: [
-        Padding(
-          padding: const EdgeInsets.only(right: 24.0, top: 38),
-          child: IconButton(
-            onPressed: () {},
-            icon: FaIcon(
-              FontAwesomeIcons.solidMoon,
-              color: Colors.white,
-            ),
-          ),
-        ),
+        ChangeThemeButton(themeColors: themeColors),
       ],
     );
   }

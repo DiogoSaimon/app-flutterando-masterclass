@@ -2,7 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:projeto_app_masterclass/shared/routes/routes.dart';
-import 'package:projeto_app_masterclass/shared/utils/app_colors.dart';
+import 'package:projeto_app_masterclass/shared/utils/theme_colors.dart';
 
 class SplashPage extends StatefulWidget {
   const SplashPage({Key? key}) : super(key: key);
@@ -33,10 +33,16 @@ class _SplashPageState extends State<SplashPage>
   }
 
   @override
+  void dispose() {
+    super.dispose();
+    controller.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     controller.forward();
     return Scaffold(
-      backgroundColor: AppColors.woodSmoke,
+      backgroundColor: ThemeColors.darkTheme.scaffoldBackgroundColor,
       body: AnimatedBuilder(
         animation: controller,
         builder: (context, child) => SizedBox(

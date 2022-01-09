@@ -1,12 +1,18 @@
+import 'package:flutter/cupertino.dart';
+
 class DataModels {
   final String? iconImage;
   final String? title;
   final String? subtitle;
   final int? count;
+  final List<Widget>? routes;
+  final Widget? page;
   DataModels({
-    required this.iconImage,
-    required this.title,
-    required this.subtitle,
-    required this.count,
+    this.iconImage,
+    this.title,
+    this.subtitle,
+    this.count,
+    this.routes,
+    this.page,
   });
 }

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:projeto_app_masterclass/shared/routes/routes.dart';
 import 'package:projeto_app_masterclass/views/exercices_page/animations/animation_exercices_page.dart';
+import 'package:projeto_app_masterclass/views/exercices_page/mockup/mockup_1/Pages/mockup1_page.dart';
+import 'package:projeto_app_masterclass/views/exercices_page/mockup/mockup_tinder/pages/mockup_tinder_page.dart';
 import 'package:projeto_app_masterclass/views/navigation_page/navigation_page.dart';
 import 'package:provider/provider.dart';
 import 'shared/utils/theme_colors.dart';
@@ -38,6 +40,8 @@ class _MyAppState extends State<MyApp> {
               splash: (context) => SplashPage(),
               navigation: (context) => NavigationPage(),
               animations: (context) => AnimationExercicesPage(),
+              mockup1: (context) => Mockup1Page(),
+              mockupTinder: (context) => MockupTinderPage(),
             },
           );
         },

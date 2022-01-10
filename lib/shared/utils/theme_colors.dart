@@ -108,6 +108,11 @@ class ThemeColors {
         fontWeight: FontWeight.w400,
         color: Color(0xFF51565A),
       ),
+      bodyText1: GoogleFonts.poppins(
+        fontSize: 14,
+        fontWeight: FontWeight.w400,
+        color: Color(0xFF51565A),
+      ),
       button: GoogleFonts.poppins(
         fontSize: 12,
         fontWeight: FontWeight.w600,
